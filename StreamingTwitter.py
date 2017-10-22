@@ -55,10 +55,9 @@ class CustomStreamListener(tweepy.StreamListener):
             
             final_tweet = '|positive|, |%s| ' % (Tweet)
 
-            f = open('YourFileHereName', 'r+')
-            old = f.read()
-            f.write(final_tweet+'\n')
-            f.close()
+            with open('YourFileHereName', 'r+') as f:
+                old = f.read()
+                f.write(final_tweet+'\n')
         
             self.n = self.n+1
             if self.n < 3000: 
@@ -123,10 +122,9 @@ class CustomStreamListenerNEG(tweepy.StreamListener):
             
             final_tweet = '|negative|, |%s| ' % (Tweet)
             
-            f = open('YourFileHereName', 'r+')
-            old = f.read()
-            f.write(final_tweet+'\n')
-            f.close()
+            with open('YourFileHereName', 'r+') as f:
+                old = f.read()
+                f.write(final_tweet+'\n')
         
             self.n = self.n+1
             if self.n < 3000: 
