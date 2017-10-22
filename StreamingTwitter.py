@@ -27,16 +27,16 @@ class CustomStreamListener(tweepy.StreamListener):
             Tweet = textTwitter.lower()
             
             #Convert www.* or https?://* to URL
-            Tweet = re.sub('((www\.[\s]+)|(https?://[^\s]+))','URL',Tweet)
+            Tweet = re.sub('((www\.\S+)|(https?://\S+))','URL',Tweet)
             
             #Convert @username to User
-            Tweet = re.sub('@[^\s]+','TWITTER_USER',Tweet)
+            Tweet = re.sub('@\S+','TWITTER_USER',Tweet)
             
             #Remove additional white spaces
-            tweet = re.sub('[\s]+', ' ', Tweet)
+            tweet = re.sub('\s+', ' ', Tweet)
             
             #Replace #word with word Handling hashtags
-            Tweet = re.sub(r'#([^\s]+)', r'\1', Tweet)
+            Tweet = re.sub(r'#(\S+)', r'\1', Tweet)
             
             #trim
             Tweet = Tweet.strip('\'"')
@@ -95,16 +95,16 @@ class CustomStreamListenerNEG(tweepy.StreamListener):
             Tweet = textTwitter.lower()
             
             #Convert www.* or https?://* to URL
-            Tweet = re.sub('((www\.[\s]+)|(https?://[^\s]+))','URL',Tweet)
+            Tweet = re.sub('((www\.\S+)|(https?://\S+))','URL',Tweet)
             
             #Convert @username to TWITTER_USER
-            Tweet = re.sub('@[^\s]+','TWITTER_USER',Tweet)
+            Tweet = re.sub('@\S+','TWITTER_USER',Tweet)
             
             #Remove additional white spaces
-            tweet = re.sub('[\s]+', ' ', Tweet)
+            tweet = re.sub('\s+', ' ', Tweet)
             
             #Replace #word with word Handling hashtags
-            Tweet = re.sub(r'#([^\s]+)', r'\1', Tweet)
+            Tweet = re.sub(r'#(\S+)', r'\1', Tweet)
             
             #trim
             Tweet = Tweet.strip('\'"')
