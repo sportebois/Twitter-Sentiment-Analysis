@@ -33,7 +33,7 @@ class CustomStreamListener(tweepy.StreamListener):
             Tweet = re.sub('@\S+','TWITTER_USER',Tweet)
             
             #Remove additional white spaces
-            tweet = re.sub('\s+', ' ', Tweet)
+            Tweet = re.sub('\s+', ' ', Tweet)
             
             #Replace #word with word Handling hashtags
             Tweet = re.sub(r'#(\S+)', r'\1', Tweet)
@@ -101,7 +101,7 @@ class CustomStreamListenerNEG(tweepy.StreamListener):
             Tweet = re.sub('@\S+','TWITTER_USER',Tweet)
             
             #Remove additional white spaces
-            tweet = re.sub('\s+', ' ', Tweet)
+            Tweet = re.sub('\s+', ' ', Tweet)
             
             #Replace #word with word Handling hashtags
             Tweet = re.sub(r'#(\S+)', r'\1', Tweet)
