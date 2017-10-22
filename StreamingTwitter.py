@@ -19,8 +19,6 @@ class CustomStreamListener(tweepy.StreamListener):
 
     def on_status(self, status):
         try:
-            tweets = []
-            name = status.author.screen_name
             textTwitter = status.text
             
             #Convert into lowercase
@@ -86,8 +84,6 @@ class CustomStreamListenerNEG(tweepy.StreamListener):
 
     def on_status(self, status):
         try:
-            tweets = []
-            name = status.author.screen_name
             textTwitter = status.text
             
             #Convert into lowercase
